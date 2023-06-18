@@ -28,6 +28,7 @@ class CitiesController extends Controller
 
 
 
+
     # add City
     public function Store(Request $request)
     {
@@ -59,8 +60,8 @@ class CitiesController extends Controller
         MakeReport('بتحديث محافظة  '.$data->name);
         Alert::success('عملية ناجحة','تم الحفظ');
         return back();
-    } 
- 
+    }
+
     # delete
     public function Delete($id)
     {
