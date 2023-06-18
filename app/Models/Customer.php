@@ -17,5 +17,8 @@ class Customer extends Authenticatable
         return URL::to('uploads/customers/avatar/'.$this->avatar);
     }
 
-
+    public function ProviderReport()
+    {
+        return $this->hasMany('App\Models\ProviderReport', 'customer_id', 'id');
+    }
 }

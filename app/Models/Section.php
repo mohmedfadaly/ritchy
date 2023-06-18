@@ -13,8 +13,9 @@ class Section extends Model
     {
         return $this->hasMany('App\Product','section_id','id');
     }
-
-
-
+    public function Reports()
+    {
+        return $this->hasMany('App\Models\ReportProduct','section_id','id');
+    }
 
 }

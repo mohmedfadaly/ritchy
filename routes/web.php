@@ -177,8 +177,63 @@ Route::group(['middleware' => ['role','auth'],'prefix'=>'admin'], function() {
         'sort'=> 2,
 		'title'=>'حذف  منتج '
 	]);
+	# providerReports
+	Route::get('providerReports',[
+		'uses' =>'ProviderReportController@Index',
+		'as'   =>'providerReports',
+		'title'=>'تقارير المندوب',
+        'sort'=> 6,
+		'subTitle'=>'تقارير المندوب',
+		'icon' =>'<i class="fas fa-tags text-main"></i>',
+		'subIcon' =>'<i class="fas fa-tags"></i>',
+		'q_a'=>true,
+		'child'=>[
+			'providerReports',
+			'create_report',
+			'show-report',
+			'DeleteProviderReport',
+			'addProviderReport',
+			'storeProviderReport',
+			'showProviderReport',
+		]
+	]);
 
-    	# orders
+    # add Provider Report
+	Route::get('create_report',[
+		'uses' =>'ProviderReportController@Create',
+		'as'   =>'addProviderReport',
+		'title'=>'إضافة تقرير المندوب',
+        'sort'=> 6,
+
+	]);
+
+
+     # show Provider Report
+	Route::get('show-report/{id}',[
+		'uses' =>'ProviderReportController@Show',
+		'as'   =>'showProviderReport',
+		'title'=>' عرض تقرير المندوب',
+        'sort'=> 6,
+
+	]);
+
+	# store Provider Report
+	Route::post('store-report',[
+		'uses' =>'ProviderReportController@Store',
+		'as'   =>'storeProviderReport',
+        'sort'=> 6,
+		'title'=>'حفظ تقرير المندوب',
+	]);
+
+	# delete Provider Report
+	Route::get('delete-report/{id}',[
+		'uses'=>'ProviderReportController@DeleteProviderReport',
+		'as'  =>'deleteProviderReport',
+        'sort'=> 6,
+		'title'=>'حذف  تقرير المندوب '
+	]);
+
+    # orders
 	Route::get('orders',[
 		'uses' =>'ordersController@orders',
 		'as'   =>'orders',

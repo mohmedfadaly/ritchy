@@ -22,5 +22,8 @@ class Product extends Model
     {
         return $this->belongsTo('App\Models\Section', 'section_id', 'id');
     }
-
+    public function ProviderReportProducts()
+    {
+        return $this->hasMany('App\Models\ProviderReportProduct','product_id','id');
+    }
 }
