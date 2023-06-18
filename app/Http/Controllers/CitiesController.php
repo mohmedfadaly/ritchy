@@ -43,6 +43,7 @@ class CitiesController extends Controller
         $data->save();
 
 
+
         MakeReport('بإضافة محافظة جديد '.$data->name);
         Alert::success('عملية ناجحة','تم الحفظ');
         return back();
