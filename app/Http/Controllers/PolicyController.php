@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Setting;
-use Session;
-use View;
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Contracts\View\View;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class PolicyController extends Controller

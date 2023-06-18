@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProviderReportProduct extends Model
 {
     use HasFactory;
-    protected $table = 'report_products';
+    protected $table = 'provider_report_products';
 
     public function ProviderReport()
     {

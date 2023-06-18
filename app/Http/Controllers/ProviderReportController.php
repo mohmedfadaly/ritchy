@@ -9,6 +9,7 @@ use App\Models\Provider;
 use App\Models\ProviderReport;
 use App\Models\ProviderReportProduct;
 use App\Models\Section;
+use View;
 use Illuminate\Http\Request;
 use Intervention\Image\File;
 use Intervention\Image\Image;
@@ -32,7 +33,8 @@ class ProviderReportController extends Controller
     # index
     public function Index()
     {
-        $data = ProviderReport::all();
+
+        $data = ProviderReport::with('Provider','Customer')->latest()->get();
         $name = 'تقارير المندوب';
         $route = route('addProviderReport');
 
